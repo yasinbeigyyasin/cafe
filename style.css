@@ -1,0 +1,483 @@
+/* =========================================================
+   1. متغیرها و پالت رنگی (Green & Organic Vibes)
+   ========================================================= */
+:root {
+    /* --- رنگ اصلی (سبز فرش و سرزنده) --- */
+    --primary-color: #80b918;       /* سبز لیمویی روشن */
+    --primary-dark: #4f772d;        /* سبز جنگلی (برای سایه و عمق) */
+    --primary-glow: rgba(128, 185, 24, 0.5);
+    
+    /* --- رنگ‌های مکمل --- */
+    --highlight: #eec213;           /* زرد لیمویی (فقط برای جرقه‌های کوچک) */
+    
+    /* --- پس‌زمینه (تیره و شیک) --- */
+    --dark-bg: #121212;             /* مشکی خالص‌تر */
+    --card-bg: #1e1e1e;
+    --card-gradient-start: #252525;
+    --card-gradient-end: #1a1a1a;
+    
+    /* --- تایپوگرافی --- */
+    --text-light: #f1f8e9;          /* سفید مایل به سبز خیلی روشن */
+    --text-dark: #a0a0a0;           /* طوسی */
+    --border-color: #333333;
+}
+
+/* --- تنظیمات کلی --- */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Lalezar', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    direction: rtl;
+    overflow-x: hidden;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- اسکرول بار سبز --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--primary-dark); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+/* =========================================================
+   2. انیمیشن‌ها
+   ========================================================= */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes move {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-120vh) rotate(360deg); }
+}
+
+@keyframes rotateIn3D {
+    from { opacity: 0; transform: translateY(50px) rotateY(90deg); }
+    to { opacity: 1; transform: translateY(0) rotateY(0deg); }
+}
+
+@keyframes blinkCursor { 50% { opacity: 0; } }
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================================================
+   3. بکگراند متحرک (دایره‌های حرفه‌ای و متنوع)
+   ========================================================= */
+.background-animation {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; overflow: hidden; pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: move linear infinite;
+    bottom: -200px;
+    /* افکت بلر برای عمق میدان */
+    filter: blur(2px);
+}
+
+/* دایره ۱: بزرگ و خیلی محو (سبز تیره) */
+.circle.c1 { 
+    width: 150px; height: 150px; left: 10%; 
+    background-color: rgba(79, 119, 45, 0.1); /* سبز تیره شفاف */
+    animation-duration: 35s; 
+    filter: blur(5px);
+}
+
+/* دایره ۲: متوسط و روشن (سبز لیمویی) */
+.circle.c2 { 
+    width: 80px; height: 80px; left: 30%; 
+    background-color: rgba(128, 185, 24, 0.15); /* سبز اصلی */
+    animation-duration: 25s; animation-delay: 2s;
+}
+
+/* دایره ۳: کوچک و سریع (سبز نعنایی) */
+.circle.c3 { 
+    width: 40px; height: 40px; left: 55%; 
+    background-color: rgba(180, 255, 100, 0.1); /* سبز خیلی روشن */
+    animation-duration: 40s; 
+}
+
+/* دایره ۴: بزرگ و آهسته (سبز آبی تیره) */
+.circle.c4 { 
+    width: 120px; height: 120px; left: 75%; 
+    background-color: rgba(50, 90, 50, 0.1); 
+    animation-duration: 30s; animation-delay: 4s;
+    filter: blur(4px);
+}
+
+/* دایره ۵: متوسط (سبز متوسط) */
+.circle.c5 { 
+    width: 60px; height: 60px; left: 90%; 
+    background-color: rgba(100, 160, 30, 0.12); 
+    animation-duration: 20s; animation-delay: 1s;
+}
+
+/* =========================================================
+   4. صفحه ورودی (Splash Screen)
+   ========================================================= */
+#splash-screen {
+    position: fixed; inset: 0; width: 100%; height: 100dvh;
+    background-color: var(--dark-bg);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; transition: opacity 0.8s ease-out;
+}
+
+.splash-content {
+    text-align: center; display: flex; flex-direction: column;
+    align-items: center; transform: translateY(-30px);
+}
+
+.splash-logo {
+    width: 110px; margin-bottom: 30px; opacity: 0;
+    animation: rotateIn3D 1s ease-out 0.4s forwards;
+    filter: drop-shadow(0 0 15px var(--primary-glow));
+}
+
+.splash-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 10vw, 5rem);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    
+    /* گرادینت سبز شیک */
+    background: linear-gradient(90deg, #ffffff 0%, var(--primary-color) 50%, #ffffff 100%);
+    background-size: 200% auto;
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    
+    opacity: 0;
+    animation: 
+        fadeInUp 1s ease-out 1.2s forwards,
+        gradientFlow 4s ease-in-out 3s infinite;
+}
+
+.splash-slogan {
+    font-family: 'Lalezar', sans-serif; font-size: 1.4rem;
+    color: var(--primary-color); text-align: center; direction: rtl;
+    white-space: pre; margin-top: 0.5rem;
+}
+
+.splash-slogan::after {
+    content: '|'; color: var(--primary-dark); margin-right: 5px;
+    animation: blinkCursor 0.8s step-end infinite;
+}
+
+/* =========================================================
+   5. هدر اصلی (Header)
+   ========================================================= */
+.main-header {
+    position: fixed; top: 0; right: 0; left: 0;
+    display: flex; justify-content: center; align-items: center;
+    padding: 1rem;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(128, 185, 24, 0.1); /* خط نازک سبز */
+    z-index: 1000;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.brand-name {
+    font-family: 'Poppins', sans-serif; font-size: 2.5rem;
+    color: var(--text-light); transition: color 0.3s ease;
+}
+.brand-name:hover { 
+    color: var(--primary-color); 
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* =========================================================
+   6. فیلترها (Category Filters)
+   ========================================================= */
+.category-filters {
+    display: flex; overflow-x: auto; white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem 1rem 1rem; margin-bottom: 1rem;
+    scrollbar-width: none;
+}
+.category-filters::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+    font-family: 'Lalezar', sans-serif; font-size: 1rem;
+    padding: 8px 26px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-dark);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; margin-left: 10px;
+}
+
+.filter-btn:hover {
+    background-color: rgba(128, 185, 24, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    /* دکمه فعال سبز */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000; /* متن مشکی روی زمینه سبز */
+    font-weight: bold;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* =========================================================
+   7. کانتینرها
+   ========================================================= */
+.swiper-container, .vertical-menu-container {
+    display: none;
+    animation: scaleIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.swiper-container { width: 100%; padding: 40px 0 80px; position: relative; }
+
+/* اسلاید غیرفعال */
+.swiper-slide {
+    width: 300px; height: 450px; position: relative;
+    filter: blur(3px) grayscale(90%); /* سیاه‌سفید کامل */
+    opacity: 0.5; transform: scale(0.9);
+    transition: all 0.4s ease; pointer-events: none;
+}
+
+/* اسلاید فعال */
+.swiper-slide-active {
+    filter: none; opacity: 1; transform: scale(1);
+    z-index: 10; pointer-events: auto; will-change: transform;
+}
+
+.vertical-menu-container {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* دکمه‌های اسلایدر */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary-color) !important;
+    transform: scale(0.9);
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+.swiper-pagination-bullet-active { 
+    background: var(--primary-color) !important; 
+}
+
+/* =========================================================
+   8. کارت محصول (Product Card)
+   ========================================================= */
+.product-card {
+    background: linear-gradient(145deg, var(--card-gradient-start), var(--card-gradient-end));
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    overflow: hidden; text-align: center; padding: 1.5rem;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: space-around;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vertical-menu-container .product-card {
+    height: 480px; filter: none !important; opacity: 1 !important;
+}
+
+/* هاور با حاشیه سبز */
+.swiper-slide-active .product-card:hover,
+.vertical-menu-container .product-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(128, 185, 24, 0.2);
+}
+
+.product-image {
+    height: 200px; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; overflow: visible;
+}
+
+.product-card img {
+    max-width: 100%; max-height: 100%; width: auto; height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
+    transition: transform 0.5s ease;
+    transform: translateZ(0);
+}
+
+.swiper-slide-active .product-card:hover img,
+.vertical-menu-container .product-card:hover img {
+    transform: scale(1.12);
+}
+.swiper-slide-active .product-card img { transform: scale(1.1); }
+
+.product-card h3 {
+    font-size: 1.7rem; color: var(--text-light);
+    margin-bottom: 0.5rem; transition: color 0.3s ease;
+    text-rendering: optimizeLegibility;
+}
+
+.swiper-slide-active .product-card:hover h3,
+.vertical-menu-container .product-card:hover h3 {
+    color: var(--primary-color);
+}
+
+/* مواد اولیه */
+.product-card .ingredients {
+    font-size: 0.95rem; color: var(--text-dark);
+    line-height: 1.6;
+    flex-grow: 1; min-height: 0; margin-bottom: 0.8rem;
+    overflow: hidden; display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* قیمت */
+.product-card .price {
+    margin-top: auto; padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex; justify-content: center; align-items: center;
+    gap: 10px; flex-wrap: wrap; width: 100%;
+}
+
+.price .new-price {
+    font-size: 1.25rem;
+    color: #fff;
+    /* دکمه سبز جذاب */
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 6px 18px; border-radius: 14px;
+    font-weight: bold; transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(79, 119, 45, 0.4);
+}
+
+.swiper-slide-active .product-card:hover .price .new-price,
+.vertical-menu-container .product-card:hover .price .new-price {
+    transform: scale(1.05);
+    background: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.price .old-price {
+    color: var(--text-dark); text-decoration: line-through; 
+    font-size: 1rem; opacity: 0.7;
+}
+
+.swiper-slide-active .product-card img { transform: scale(1.15) rotate(-5deg); }
+
+/* =========================================================
+   9. فوتر و دکمه‌ها
+   ========================================================= */
+.simple-footer {
+    border-top: 1px solid var(--border-color);
+    background: transparent; padding: 3rem 1rem;
+    text-align: center; margin-top: 3rem;
+}
+
+.footer-icons { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+
+.footer-icon {
+    color: var(--text-dark); transition: all 0.3s ease; padding: 0.5rem;
+}
+.footer-icon:hover { color: var(--primary-color); transform: translateY(-5px); }
+.footer-address p { font-size: 1rem; color: var(--text-dark); margin: 0; }
+
+/* دکمه شناور بازی */
+.floating-game-btn {
+    position: fixed; bottom: 25px; left: 25px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%; border: none;
+    cursor: pointer; font-size: 28px;
+    background: linear-gradient(135deg, var(--primary-color), #aacc00);
+    color: #fff; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(128, 185, 24, 0.4);
+    transition: transform 0.3s;
+}
+.floating-game-btn:hover { transform: scale(1.15) rotate(20deg); }
+
+/* مودال بازی */
+.game-modal {
+    position:fixed; inset:0; display:none; align-items:center; 
+    justify-content:center; background:rgba(0,0,0,0.95);
+    padding:16px; z-index:1000;
+}
+.game-modal[aria-hidden="false"] { display:flex; }
+
+.game-wrap {
+    width:min(920px,100%); border-radius:24px;
+    border:2px solid var(--primary-color);
+    background: #1e1e1e;
+    box-shadow:0 0 50px rgba(128, 185, 24, 0.2);
+    padding:16px 16px 10px; position:relative;
+}
+
+.close-btn {
+    position:absolute; top:-15px; right:-15px; width:45px; height:45px;
+    border-radius:50%; border:none; cursor:pointer;
+    background: var(--primary-color);
+    color: #fff; font-size:22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.hud-item {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; padding:6px 12px; border-radius:12px; 
+    font-family:'Lalezar', cursive;
+}
+
+.canvas-holder {
+    position:relative; width:100%; height: clamp(260px, 56vh, 380px);
+    background: linear-gradient(to bottom, #89f7fe 0%, #66a6ff 100%);
+    border-radius:16px; overflow:hidden; margin-top: 10px;
+    border: 2px solid #fff;
+}
+
+#gameCanvas { width:100%; height:100%; display:block; }
+.controls { display:flex; gap:10px; justify-content:center; align-items:center; margin-top:15px; }
+.ctrl {
+    background: var(--primary-color); border:none; color: #000; 
+    border-radius:999px; padding:10px 20px; cursor:pointer;
+    font-weight:700; font-family: 'Lalezar', sans-serif;
+    box-shadow: 0 5px 15px rgba(128, 185, 24, 0.4);
+}
+
+/* =========================================================
+   10. ریسپانسیو (Mobile)
+   ========================================================= */
+@media (max-width: 768px) {
+    .brand-name { font-size: 2rem; }
+    .splash-brand { font-size: 2.8rem; }
+    
+    .swiper-slide { width: 270px; height: 440px; }
+    .vertical-menu-container { gap: 1.5rem; }
+    .vertical-menu-container .product-card { height: auto; min-height: 420px; }
+    
+    .product-image { height: 170px; }
+    .product-card h3 { font-size: 1.5rem; }
+    .price .new-price { font-size: 1.15rem; padding: 6px 14px; }
+    
+    .simple-footer { padding: 1.5rem; }
+    .footer-icons { gap: 1.5rem; }
+}
