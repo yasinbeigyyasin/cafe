@@ -17,7 +17,7 @@
  <div id="splash-screen">
         <div class="splash-content">
             <img src="logo.png" alt="Eleven Food Logo" class="splash-logo">
-            <h1 class="splash-brand">jakesh cafe</h1>
+            <h1 class="splash-brand">rematch</h1>
 <p class="splash-slogan"></p>
         </div>
     </div>
@@ -32,7 +32,7 @@
 
   <div id="main-container">
         <header class="main-header">
-            <h1 class="brand-name">jakesh cafe</h1>
+            <h1 class="brand-name">rematch cafe</h1>
             
 
         </header>
@@ -41,14 +41,14 @@
 
     <main>
         <div class="category-filters animated-item">
-        
-            <!-- تغییر نام و data-filter دکمه اول -->
-            <button class="filter-btn active" data-filter="bestseller">پرفروش‌ها</button>
-            <button class="filter-btn" data-filter="cold">ساندویچ سرد</button>
-            <button class="filter-btn" data-filter="hot">گرم</button>
-            <button class="filter-btn" data-filter="drink">نوشیدنی</button>
-            <button class="filter-btn" data-filter="dessert">دسر</button>
-        </div>
+    <button class="filter-btn active" data-filter="bestseller">پرفروش‌ها</button>
+    <button class="filter-btn" data-filter="hot">نوشیدنی گرم</button>
+    <button class="filter-btn" data-filter="cold">نوشیدنی سرد</button>
+    <button class="filter-btn" data-filter="shake">شیک و اسموتی</button>
+    <button class="filter-btn" data-filter="tea">چای و دمنوش</button>
+    <button class="filter-btn" data-filter="dessert">کیک و دسر</button>
+</div>
+
 
         <!-- کانتینر اسلایدر برای "پرفروش‌ها" -->
         <!-- توجه: swiper-wrapper به صورت پیش‌فرض خالی است و توسط جاوااسکریپت پر می‌شود -->
@@ -94,56 +94,258 @@
     <!-- جاوااسکریپت از اینجا اطلاعات را می‌خواند -->
     <!-- ========================================================= -->
     <div id="all-products-source" style="display: none;">
-        
-        <!-- ===== ساندویچ‌های سرد ===== -->
-        <div class="product-item" data-categories="cold bestseller"> <!-- یک سرد پرفروش -->
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/6r8vS0Z/sandwich1.png" alt="ژامبون مرغ"></div><h3>ژامبون مرغ و قارچ</h3><p class="ingredients">ژامبون مرغ، قارچ، پنیر گودا، کاهو، گوجه، سس مخصوص</p><div class="price"><span class="new-price">۱۲۰,۰۰۰ ت</span><span class="old-price">۱۴۰,۰۰۰ ت</span></div></div>
-        </div>
-        <div class="product-item" data-categories="cold">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/k2DyyYt/sandwich2.png" alt="بوقلمون"></div><h3>ژامبون بوقلمون دودی</h3><p class="ingredients">ژامبون بوقلمون، پنیر دودی، زیتون، جعفری، سس پستو</p><div class="price"><span class="new-price">۱۵۵,۰۰۰ تومان</span></div></div>
-        </div>
-        <div class="product-item" data-categories="cold">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/DzdPZp2/roastbeef.png" alt="رست بیف"></div><h3>رست بیف ویژه</h3><p class="ingredients">گوشت رست شده، پنیر پرولون، پیاز کاراملی، سس قارچ</p><div class="price"><span class="new-price">۱۹۵,۰۰۰ تومان</span></div></div>
-        </div>
-         <div class="product-item" data-categories="cold">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/VMyB8vD/chicken-pesto.png" alt="چیکن پستو"></div><h3>چیکن پستو</h3><p class="ingredients">مرغ گریل، سس پستو، گوجه خشک، پنیر موزارلا</p><div class="price"><span class="new-price">۱۷۰,۰۰۰ تومان</span></div></div>
-        </div>
 
-        <!-- ===== غذاهای گرم ===== -->
-        <div class="product-item" data-categories="hot bestseller"> <!-- یک گرم پرفروش -->
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/hL4qBfN/burger1.png" alt="برگر"></div><h3>برگر مخصوص اِلِون</h3><p class="ingredients">گوشت ۱۸۰ گرم، پنیر چدار، بیکن، پیاز کاراملی، سس باربیکیو</p><div class="price"><span class="new-price">۲۱۰,۰۰۰ تومان</span></div></div>
-        </div>
-        <div class="product-item" data-categories="hot">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/Y0sNpxf/cheeseburger.png" alt="چیزبرگر"></div><h3>چیزبرگر کلاسیک</h3><p class="ingredients">گوشت ۱۵۰ گرم، پنیر گودا، کاهو، گوجه، خیارشور</p><div class="price"><span class="new-price">۱۸۰,۰۰۰ تومان</span></div></div>
-        </div>
-        <div class="product-item" data-categories="hot">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/c2j0x4r/hotdog.png" alt="هات داگ"></div><h3>هات داگ مخصوص</h3><p class="ingredients">هات داگ تنوری، سس خردل، پیاز سرخ شده، پنیر</p><div class="price"><span class="new-price">۱۴۰,۰۰۰ تومان</span></div></div>
-        </div>
-
-        <!-- ===== نوشیدنی‌ها ===== -->
-        <div class="product-item" data-categories="drink bestseller"> <!-- یک نوشیدنی پرفروش -->
-            <div class="product-card"><div class="product-image"><img src="data:image/jpeg;base64,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" alt="موهیتو"></div><h3>موهیتو طبیعی</h3><p class="ingredients">لیمو تازه، نعنا، سودا</p><div class="price"><span class="new-price">۷۵,۰۰۰ تومان</span></div></div>
-        </div>
-        <div class="product-item" data-categories="drink">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/ZJ87G2b/icelatte.png" alt="آیس لاته"></div><h3>آیس لاته</h3><p class="ingredients">اسپرسو، شیر سرد، یخ</p><div class="price"><span class="new-price">۸۰,۰۰۰ تومان</span></div></div>
-        </div>
-         <div class="product-item" data-categories="drink">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/Wc6Tdhg/shake.png" alt="شیک"></div><h3>شیک نوتلا</h3><p class="ingredients">بستنی وانیلی، نوتلا، شیر، خامه</p><div class="price"><span class="new-price">۱۱۰,۰۰۰ تومان</span></div></div>
-        </div>
-
-        <!-- ===== دسرها ===== -->
-        <div class="product-item" data-categories="dessert bestseller"> <!-- یک دسر پرفروش -->
-            <div class="product-card"><div class="product-image"><img src="https://farkhondeh.com/wp-content/uploads/2024/09/%DA%86%DB%8C%D8%B2-%DA%A9%DB%8C%DA%A9-%D9%86%D9%88%D8%AA%D9%84%D8%A7-%D8%A8%D8%A7-%D9%BE%D8%A7%DB%8C%D9%87-%D8%A8%DB%8C%D8%B3%DA%A9%D9%88%DB%8C%D8%AA2.webp" alt="چیزکیک"></div><h3>چیزکیک نوتلا</h3><p class="ingredients">کیک پنیر شکلاتی با روکش نوتلا و فندق</p><div class="price"><span class="new-price">۹۵,۰۰۰ تومان</span></div></div>
-        </div>
-        <div class="product-item" data-categories="dessert">
-            <div class="product-card"><div class="product-image"><img src="https://i.ibb.co/hXN8c1W/brownie.png" alt="براونی"></div><h3>براونی شکلات داغ</h3><p class="ingredients">کیک براونی با سس شکلات و یک اسکوپ بستنی</p><div class="price"><span class="new-price">۱۲۰,۰۰۰ تومان</span></div></div>
+    <!-- ==================== اسپرسو (Espresso) ==================== -->
+    <div class="product-item" data-categories="hot espresso">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?q=80&w=400&auto=format&fit=crop" alt="اسپرسو سینگل"></div>
+            <h3>اسپرسو سینگل</h3>
+            <p class="ingredients">ترکیبی: ۴۱ | سینگل: ۸۵ | تخصصی: ۱۰۵</p>
+            <div class="price"><span class="new-price">شروع از ۴۱,۰۰۰</span></div>
         </div>
     </div>
+
+    <div class="product-item" data-categories="hot bestseller">
+    <div class="product-card">
+        <!--  لیبل تخفیف  -->
+        <span style="position:absolute;top:12px;right:12px;background:var(--highlight);color:#000;padding:4px 10px;border-radius:999px;font-size:0.85rem;font-weight:bold;z-index:2;">۲۰٪ تخفیف</span>
+
+        <div class="product-image"><img src="https://images.unsplash.com/photo-1593443320739-77f74939d0da?q=80&w=400&auto=format&fit=crop" alt="لاته"></div>
+        <h3>کافه لاته</h3>
+        <p class="ingredients">اسپرسو، شیر بخار داده شده و فوم ملایم</p>
+        <div class="price">
+            <span class="old-price">۱۰۵,۰۰۰ تومان</span>
+            <span class="new-price">۸۴,۰۰۰ تومان</span>
+        </div>
+    </div>
+</div>
+
+    <div class="product-item" data-categories="hot espresso">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?q=80&w=400&auto=format&fit=crop" alt="آمریکانو"></div>
+            <h3>آمریکانو</h3>
+            <p class="ingredients">اسپرسو به همراه آب داغ</p>
+            <div class="price"><span class="new-price">۶۷,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+    <div class="product-item" data-categories="hot espresso">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1642649149963-0ef6779df6c6?q=80&w=400&auto=format&fit=crop" alt="رومانو"></div>
+            <h3>رومانو / سینامو</h3>
+            <p class="ingredients">اسپرسو با طعم لیمو یا دارچین</p>
+            <div class="price"><span class="new-price">۸۷,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== شیر قهوه (Milk Coffee) ==================== -->
+    <div class="product-item" data-categories="hot bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1593443320739-77f74939d0da?q=80&w=400&auto=format&fit=crop" alt="لاته"></div>
+            <h3>کافه لاته</h3>
+            <p class="ingredients">اسپرسو، شیر بخار داده شده و فوم ملایم</p>
+            <div class="price"><span class="new-price">۱۰۵,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="hot bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1534687941688-651ccaafbff8?q=80&w=400&auto=format&fit=crop" alt="موکا"></div>
+            <h3>کافه موکا</h3>
+            <p class="ingredients">اسپرسو، شکلات، شیر و فوم</p>
+            <div class="price"><span class="new-price">۱۰۷,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="hot">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1517701604599-bb29b5dd7359?q=80&w=400&auto=format&fit=crop" alt="کاپوچینو"></div>
+            <h3>کاپوچینو ایتالیایی</h3>
+            <p class="ingredients">اسپرسو با فوم شیر غلیظ و زیاد</p>
+            <div class="price"><span class="new-price">۱۰۵,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+     <div class="product-item" data-categories="hot">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1515825838458-f2a94b20105a?q=80&w=400&auto=format&fit=crop" alt="ماچا لاته"></div>
+            <h3>ماچا لاته گرم</h3>
+            <p class="ingredients">پودر چای سبز ژاپنی اصیل با شیر گرم</p>
+            <div class="price"><span class="new-price">۱۲۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== نوشیدنی های بدون کافئین ==================== -->
+    <div class="product-item" data-categories="hot">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=400&auto=format&fit=crop" alt="هات چاکلت"></div>
+            <h3>هات چاکلت کلاسیک</h3>
+            <p class="ingredients">شکلات داغ غلیظ و شیر</p>
+            <div class="price"><span class="new-price">۹۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="hot bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=400&auto=format&fit=crop" alt="چای ماسالا"></div>
+            <h3>چای ماسالا / کرک</h3>
+            <p class="ingredients">ترکیب ادویه‌های معطر هندی با شیر</p>
+            <div class="price"><span class="new-price">۹۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+    <div class="product-item" data-categories="hot">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1624726175512-19b9baf00ca9?q=80&w=400&auto=format&fit=crop" alt="پینک چاکلت"></div>
+            <h3>پینک چاکلت / چیبو</h3>
+            <p class="ingredients">شکلات‌های طعم‌دار خاص و رنگی</p>
+            <div class="price"><span class="new-price">۱۰۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== چای و دمنوش ==================== -->
+    <div class="product-item" data-categories="hot tea">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?q=80&w=400&auto=format&fit=crop" alt="چای"></div>
+            <h3>چای و دمنوش</h3>
+            <p class="ingredients">تمام برگ / دودی / سبز / ریمچ</p>
+            <div class="price"><span class="new-price">۶۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== نوشیدنی سرد بر پایه قهوه ==================== -->
+    <div class="product-item" data-categories="cold bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?q=80&w=400&auto=format&fit=crop" alt="آیس لاته"></div>
+            <h3>آیس لاته</h3>
+            <p class="ingredients">اسپرسو، شیر سرد و یخ</p>
+            <div class="price"><span class="new-price">۱۱۰,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="cold">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?q=80&w=400&auto=format&fit=crop" alt="اسپرسو تونیک"></div>
+            <h3>اسپرسو تونیک</h3>
+            <p class="ingredients">اسپرسو دبل شات و آب تونیک گازدار</p>
+            <div class="price"><span class="new-price">۸۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="cold bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?q=80&w=400&auto=format&fit=crop" alt="آیس کارامل ماکیاتو"></div>
+            <h3>آیس کارامل ماکیاتو</h3>
+            <p class="ingredients">شیر، وانیل، اسپرسو و سس کارامل</p>
+            <div class="price"><span class="new-price">۱۲۵,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+    <div class="product-item" data-categories="cold">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1598387993367-755c85b14878?q=80&w=400&auto=format&fit=crop" alt="آفوگاتو"></div>
+            <h3>آفوگاتو</h3>
+            <p class="ingredients">یک اسکوپ بستنی وانیلی غرق در اسپرسو داغ</p>
+            <div class="price"><span class="new-price">۹۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== اسموتی (Smoothie) ==================== -->
+    <div class="product-item" data-categories="cold shake">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=400&auto=format&fit=crop" alt="رد بالون"></div>
+            <h3>اسموتی رد بالون</h3>
+            <p class="ingredients">ترکیب میوه‌های قرمز و جنگلی</p>
+            <div class="price"><span class="new-price">۱۳۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="cold shake">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=400&auto=format&fit=crop" alt="اوشن"></div>
+            <h3>اسموتی اوشن / ون گوگ</h3>
+            <p class="ingredients">طعم‌های استوایی و خنک با رنگ جذاب</p>
+            <div class="price"><span class="new-price">۱۳۷,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== میلک شیک (Milk Shake) ==================== -->
+    <div class="product-item" data-categories="cold shake bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1579954115563-e72bf1381629?q=80&w=400&auto=format&fit=crop" alt="میلک شیک"></div>
+            <h3>شیک نوتلا / شکلات</h3>
+            <p class="ingredients">بستنی، شیر و شکلات غلیظ</p>
+            <div class="price"><span class="new-price">۱۳۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="cold shake">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=400&auto=format&fit=crop" alt="شیک لوتوس"></div>
+            <h3>شیک لوتوس / بادام زمینی</h3>
+            <p class="ingredients">طعم بیسکوییت لوتوس یا کره بادام زمینی</p>
+            <div class="price"><span class="new-price">۱۴۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+    <div class="product-item" data-categories="cold shake">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1626075297126-6555c2c54769?q=80&w=400&auto=format&fit=crop" alt="ماچا شیک"></div>
+            <h3>ماچا شیک / اسپرولینا</h3>
+            <p class="ingredients">شیک‌های سبز، سالم و مقوی</p>
+            <div class="price"><span class="new-price">۱۴۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== نوستالژی ==================== -->
+    <div class="product-item" data-categories="cold dessert bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?q=80&w=400&auto=format&fit=crop" alt="معجون"></div>
+            <h3>معجون مخصوص</h3>
+            <p class="ingredients">بستنی، آجیل فراوان، عسل و موز</p>
+            <div class="price"><span class="new-price">۲۰۰,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <!-- ==================== ماکتل (Mocktail) ==================== -->
+    <div class="product-item" data-categories="cold bestseller">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" alt="موهیتو"></div>
+            <h3>موهیتو / لیموناد</h3>
+            <p class="ingredients">لیموی تازه، نعنا و سودا</p>
+            <div class="price"><span class="new-price">۱۱۷,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+    <div class="product-item" data-categories="cold">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?q=80&w=400&auto=format&fit=crop" alt="پینا کولادا"></div>
+            <h3>پینا کولادا</h3>
+            <p class="ingredients">ترکیب آناناس، نارگیل و خامه</p>
+            <div class="price"><span class="new-price">۱۱۹,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+    
+    <div class="product-item" data-categories="cold">
+        <div class="product-card">
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=400&auto=format&fit=crop" alt="ماکتل"></div>
+            <h3>لیلیپاپ / کارتلین</h3>
+            <p class="ingredients">نوشیدنی‌های سرد ترکیبی ویژه</p>
+            <div class="price"><span class="new-price">۱۴۳,۰۰۰ تومان</span></div>
+        </div>
+    </div>
+
+</div>
+
 <div id="all-products-source" style="display: none;">
             <!-- ... آیتم‌های محصول ... -->
         </div>
     <!-- بخش مودال بازی و دکمه شناور (بدون تغییر) -->
-    <button class="floating-game-btn" id="openGameBtn">🎮</button>
+<a href="game.html" class="floating-game-btn" id="openGameBtn">
+  <img src="game.png" alt="Game Controller" width="40" height="40">
+</a>
+
+
     <section class="game-modal" id="gameModal" aria-hidden="true">
         <div class="game-wrap">
           <button class="close-btn" id="closeGameBtn">✖</button>
@@ -163,32 +365,7 @@
           </div>
         </div>
     </section>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sloganElement = document.querySelector(".splash-slogan");
-  const text = "سلامتی، طعم واقعی زندگیست 🌿"; // متن شعار دلخواه
-  let index = 0;
 
-  function typeLetter() {
-    if (index < text.length) {
-      sloganElement.textContent = text.substring(0, index + 1);
-      index++;
-      const speed = 80 + Math.random() * 60; // سرعت تایپ طبیعی‌تر
-      setTimeout(typeLetter, speed);
-    } else {
-      // بعد از پایان تایپ، اسپلش با تاخیر حذف بشه
-      setTimeout(() => {
-        const splash = document.getElementById("splash-screen");
-        splash.style.opacity = "0";
-        setTimeout(() => splash.style.display = "none", 800);
-      }, 2000);
-    }
-  }
-
-  // کمی بعد از نمایش برند، تایپ شروع شه
-  setTimeout(typeLetter, 1800);
-});
-</script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
