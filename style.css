@@ -146,11 +146,23 @@ body {
     align-items: center; transform: translateY(-30px);
 }
 
+/* =========================================================*
+   4. صفحه ورودی (Splash Screen) - بروزرسانی لوگو
+   ========================================================= */
 .splash-logo {
-    width: 110px; margin-bottom: 30px; opacity: 0;
+    width: 110px;
+    height: 110px; /* برای اطمینان از دایره بودن، عرض و ارتفاع را برابر قرار دهید */
+    margin-bottom: 30px;
+    opacity: 0;
     animation: rotateIn3D 1s ease-out 0.4s forwards;
     filter: drop-shadow(0 0 15px var(--primary-glow));
+
+    /* --- کدهای جدید برای دایره‌ای کردن --- */
+    border-radius: 50%;   /* این خط عکس را کاملا گرد می‌کند */
+    object-fit: cover;    /* این خط باعث می‌شود عکس تمام فضای دایره را پر کند بدون اینکه کشیده شود */
+    border: 3px solid var(--primary-color); /* یک حاشیه سبز برای زیبایی بیشتر (اختیاری) */
 }
+
 
 .splash-brand {
     font-family: 'Poppins', sans-serif;
@@ -405,17 +417,42 @@ body {
 .footer-icon:hover { color: var(--primary-color); transform: translateY(-5px); }
 .footer-address p { font-size: 1rem; color: var(--text-dark); margin: 0; }
 
-/* دکمه شناور بازی */
+/* دکمه شناور بازی (موقعیت: پایین-چپ) */
 .floating-game-btn {
-    position: fixed; bottom: 25px; left: 25px; z-index: 999;
-    width: 60px; height: 60px; border-radius: 50%; border: none;
-    cursor: pointer; font-size: 28px;
+    position: fixed;
+    bottom: 25px; /* فاصله از پایین */
+    left: 25px;   /* فاصله از چپ */
+    z-index: 999;
+    
+    width: 75px;   /* عرض دایره */
+    height: 75px;  /* ارتفاع دایره */
+    
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
     background: linear-gradient(135deg, var(--primary-color), #aacc00);
     color: #fff; 
     box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(128, 185, 24, 0.4);
     transition: transform 0.3s;
+
+    /* برای وسط‌چینی عکس داخل دکمه */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.floating-game-btn:hover { transform: scale(1.15) rotate(20deg); }
+
+.floating-game-btn:hover {
+    /* از اینجا transform: translateX(-50%) حذف شد */
+    transform: scale(1.15) rotate(20deg); 
+}
+
+/* استایل برای عکس داخل دکمه */
+.floating-game-btn img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+}
 
 /* مودال بازی */
 .game-modal {
