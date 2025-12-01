@@ -242,23 +242,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- انیمیشن تایپ برای شعار ---
+        // --- انیمیشن تایپ برای شعار (اصلاح شده و بدون باگ) ---
     const sloganElement = document.querySelector(".splash-slogan");
+    
     if (sloganElement) {
         const text = "سلامتی، طعم واقعی زندگیست 🌿";
+        // استفاده از Array.from برای شناسایی صحیح ایموجی به عنوان یک کاراکتر
+        const characters = Array.from(text); 
         let index = 0;
+        
+        // ابتدا متن را خالی می‌کنیم تا تداخلی نباشد
+        sloganElement.textContent = ""; 
 
         function typeLetter() {
-            if (index < text.length) {
-                sloganElement.textContent = text.substring(0, index + 1);
+            if (index < characters.length) {
+                // اضافه کردن کاراکتر فعلی به متن
+                sloganElement.textContent += characters[index];
                 index++;
-                const speed = 80 + Math.random() * 60;
+                
+                // سرعت تایپ تصادفی برای طبیعی‌تر شدن
+                const speed = 80 + Math.random() * 60; 
                 setTimeout(typeLetter, speed);
+            } else {
+                // --- پایان تایپ و شروع محو شدن ---
+                setTimeout(() => {
+                    const splash = document.getElementById("splash-screen");
+                    if (splash) {
+                        splash.style.opacity = "0";
+                        // غیرفعال کردن کلیک روی اسپلش هنگام محو شدن
+                        splash.style.pointerEvents = "none"; 
+                        
+                        setTimeout(() => {
+                            splash.style.display = "none";
+                            
+                            // اطلاع به کانتینر اصلی که لود تمام شده
+                            const mainContainer = document.getElementById("main-container");
+                            if (mainContainer) {
+                                mainContainer.classList.remove('loading');
+                                mainContainer.classList.add('loaded');
+                            }
+                        }, 800);
+                    }
+                }, 1500); // مکث بعد از پایان تایپ
             }
         }
 
-        setTimeout(typeLetter, 1800);
+        // شروع تایپ با کمی تاخیر
+        setTimeout(typeLetter, 1000);
     }
+
 });
 function setupVerticalMenuAutoScroll() {
     console.log("Setting up vertical menu auto-scroll");
